@@ -1,0 +1,398 @@
+:root {
+    --wrigthColor: #000000;
+    --elementColor: #fe5d5d;
+    --boxColor: #f9f1ec;
+    --bgColor: #ffffff;
+    --border: #e0e0e0;
+    --footerColor: #faf1ed;
+    --radius: 20px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: content-box;
+}
+body {
+    font-size: 16px;
+}
+
+.containers {
+    width: 76vw;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+h1 {
+    font-size: 3.5em;
+    font-family: 'Trip Sans';
+}
+h2 {
+    font-size: 1.7em;
+    margin-bottom: 30px;
+}
+h3 {
+    font-size: 1.5em;
+}
+p {
+    letter-spacing: 1px;
+}
+a {
+    color: var(--wrigthColor);
+    text-decoration: none;
+}
+
+/********** HEADER **********/
+header {
+    height: 60px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+header .header_left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 30%;
+}
+
+header .header_left img {
+    background: cover/center;
+    width: 200px;
+    height: 60px;
+}
+header .header_left span {
+    position: relative;
+    margin-left: 30px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    line-height: 38px;
+    width: 350px;
+}
+header .header_left input {
+    width: 300px;
+    border: none;
+    margin-left: 50px;
+}
+header .header_left input:focus {
+    outline: none;
+}
+header .header_left i {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 20px;
+}
+
+header .menu {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: center;
+    flex-wrap: nowrap;
+}
+
+header .menu span {
+    width: 100px;
+    line-height: 40px;
+    text-align: center;
+}
+header .menu span:hover {
+    background-color: var(--boxColor);
+    border-radius: var(--radius);
+    width: 100px;
+    line-height: 40px;
+    text-align: center;
+}
+header .menu span .fas,
+header .menu span .far {
+    font-size: 1.3em;
+    padding: 10px;
+}
+
+/********* Main ********/
+/********* boxes ********/
+#head_title {
+    color: var(--elementColor);
+}
+.all_boxes {
+    display: flex;
+    /* flex-wrap: wrap; */
+    width: 100%;
+    margin: 40px 0;
+    row-gap: 10px;
+}
+.all_boxes .box {
+    flex: 1;
+    border: 1px solid var(--wrigthColor);
+    border-radius: var(--radius);
+    min-height: 66px;
+    min-width: 150px;
+    padding: 5px;
+}
+.all_boxes .box:not(:last-child) {
+    margin-right: 20px;
+}
+.all_boxes .box a {
+    border-radius: var(--radius);
+    box-sizing: border-box;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    text-align: left;
+    gap: 12px;
+    padding: 10px 16px 12px;
+    position: relative;
+}
+.all_boxes .box a span:nth-child(1) {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.all_boxes .box:hover {
+    background-color: var(--wrigthColor);
+    cursor: pointer;
+}
+.all_boxes .box a:hover {
+    color: var(--bgColor);
+}
+
+/******* images *****/
+.all_images {
+    width: 100%;
+    height: 430px;
+    display: flex;
+}
+
+.all_images .left_image {
+    flex: 1;
+    width: calc(100% - 40%);
+    height: 100%;
+    margin-right: 2px;
+}
+.all_images .left_image img {
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+}
+.all_images .left_image img:hover {
+    opacity: 0.8;
+}
+
+.all_images .right_images {
+    width: 40%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.all_images .right_images img {
+    flex: 1;
+    height: calc(50% - 1.5px);
+    object-fit: cover;
+    object-position: center;
+}
+.all_images .right_images img:first-child {
+    margin-bottom: 3px;
+}
+.all_images .right_images img:hover {
+    opacity: 0.8;
+}
+
+/******** destinations *********/
+
+.destinations {
+    font-size: 12px;
+    margin: 28px 0 45px;
+}
+
+/******** content *********/
+
+.content {
+    display: flex;
+    flex-direction: row;
+    align-content: flex-start;
+    justify-content: center;
+    width: 100%;
+}
+
+.content .left_content {
+    width: calc(100% - 450px);
+    margin-right: 100px;
+}
+.content .left_content p {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: justify;
+}
+.content .right_content {
+    width: 450px;
+}
+.content .right_content .box_above {
+    background-color: var(--elementColor);
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    padding: 30px;
+    line-height: 40px;
+}
+.content .right_content .box_above p {
+    line-height: 20px;
+    margin: 10px auto;
+}
+.content .right_content .box_above p:first-child {
+    font-weight: bold;
+    font-size: 2em;
+    line-height: 40px;
+}
+
+.content .right_content .box_above button {
+    background-color: var(--wrigthColor);
+    color: var(--bgColor);
+    border: none;
+    line-height: 50px;
+    width: 150px;
+    border-radius: var(--radius);
+}
+.content .right_content .box_above button:hover {
+    opacity: 0.85;
+}
+
+.content .right_content .box_bottom img {
+    width: 100%;
+    height: 70%;
+}
+
+/******** caroussels ***********/
+.caroussels .caroussel {
+    height: 300px;
+    display: flex;
+    position: relative;
+    margin-bottom: 80px;
+}
+.caroussels .caroussel .fa-arrow-right {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bgColor);
+    border: 2px solid var(--wrigthColor);
+    border-radius: 50%;
+    right: 0;
+    top: 30%;
+    transform: translate(50%, -30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1;
+}
+
+.caroussels .caroussel .right-col .fa-arrow-left,
+.caroussels .caroussel .fa-arrow-right {
+    cursor: pointer;
+}
+.caroussels .caroussel .left-col {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 300px;
+    height: 100%;
+}
+.caroussels .caroussel .left-col a {
+    font-weight: bold;
+}
+.caroussels .caroussel .left-col a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.caroussels .caroussel .right-col {
+    height: 100%;
+    width: calc(100% - 300px);
+    display: flex;
+    overflow-x: scroll;
+    position: relative;
+}
+.caroussels .caroussel .right-col .fa-arrow-left {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bgColor);
+    border: 2px solid var(--wrigthColor);
+    border-radius: 50%;
+    left: 0;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+.caroussels .caroussel .right-col div:not(:last-child) {
+    margin-right: 40px;
+}
+.caroussels .caroussel .right-col::-webkit-scrollbar {
+    display: none;
+}
+
+.caroussels .caroussel .right-col > div {
+    height: 100%;
+    width: calc((100% - 40px) / 3);
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+.caroussels .caroussel .right-col div .circle {
+    background-color: var(--bgColor);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: 2%;
+    left: 83%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.caroussels .caroussel .right-col div img {
+    height: calc(205px - 4px);
+    object-fit: cover;
+}
+.caroussels .caroussel .right-col div img:hover {
+    opacity: 0.8;
+    cursor: pointer;
+}
+
+.caroussels .caroussel .right-col div .description {
+    height: calc(100% - 207px);
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+}
+
+/******** FOOTER *********/
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60px;
+    position: relative;
+    background-color: var(--footerColor);
+}
+
+footer::before {
+    position: absolute;
+    content: '';
+    border: 1px solid var(--border);
+    width: 100vw;
+    top: 0;
+}
+footer a {
+    font-weight: bold;
+}
+
+@media screen and (max-width: 1420px) {
+}
