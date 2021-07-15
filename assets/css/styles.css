@@ -11,7 +11,7 @@
 * {
     padding: 0;
     margin: 0;
-    box-sizing: content-box;
+    box-sizing: border-box;
 }
 body {
     font-size: 16px;
@@ -53,49 +53,57 @@ header .header_left {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    width: 30%;
+    width: calc(100% - 40%);
+    height: 100%;
+    position: relative;
 }
 
 header .header_left img {
     background: cover/center;
     width: 200px;
-    height: 60px;
+    height: 100%;
 }
-header .header_left span {
-    position: relative;
-    margin-left: 30px;
-    border-radius: var(--radius);
-    border: 2px solid var(--border);
-    line-height: 38px;
-    width: 350px;
-}
+
 header .header_left input {
-    width: 300px;
+    width: calc(100% - 200px);
+    max-width: 400px;
+    min-width: 300px;
     border: none;
     margin-left: 50px;
+    line-height: 38px;
+    border-radius: var(--radius);
+    border: 2px solid var(--border);
+    overflow: hidden;
 }
 header .header_left input:focus {
     outline: none;
+    padding-left: 50px;
 }
 header .header_left i {
+    width: 10px;
+    font-size: 1.3em;
+    margin-left: 20px;
     position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 20px;
+    left: 250px;
 }
 
 header .menu {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-content: center;
     flex-wrap: nowrap;
+    width: 40%;
+    height: 100%;
 }
 
 header .menu span {
-    width: 100px;
+    height: 100%;
+    width: calc((70% - 5px) / 4);
+    min-width: 100px;
     line-height: 40px;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 header .menu span:hover {
     background-color: var(--boxColor);
@@ -104,10 +112,12 @@ header .menu span:hover {
     line-height: 40px;
     text-align: center;
 }
-header .menu span .fas,
-header .menu span .far {
+header .menu span i {
     font-size: 1.3em;
-    padding: 10px;
+    margin-right: 5px;
+}
+header .burger {
+    display: none;
 }
 
 /********* Main ********/
@@ -117,21 +127,19 @@ header .menu span .far {
 }
 .all_boxes {
     display: flex;
-    /* flex-wrap: wrap; */
     width: 100%;
     margin: 40px 0;
     row-gap: 10px;
 }
 .all_boxes .box {
     flex: 1;
+    width: calc(100% / 6 - 50px);
     border: 1px solid var(--wrigthColor);
     border-radius: var(--radius);
     min-height: 66px;
-    min-width: 150px;
-    padding: 5px;
 }
 .all_boxes .box:not(:last-child) {
-    margin-right: 20px;
+    margin-right: 10px;
 }
 .all_boxes .box a {
     border-radius: var(--radius);
@@ -267,7 +275,7 @@ header .menu span .far {
 
 /******** caroussels ***********/
 .caroussels .caroussel {
-    height: 300px;
+    height: 50vh;
     display: flex;
     position: relative;
     margin-bottom: 80px;
@@ -287,8 +295,23 @@ header .menu span .far {
     justify-content: center;
     z-index: 1;
 }
+.caroussels .caroussel .fa-arrow-left {
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: var(--bgColor);
+    border: 2px solid var(--wrigthColor);
+    border-radius: 50%;
+    left: 25%;
+    top: 30%;
+    transform: translate(-50%, -30%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
 
-.caroussels .caroussel .right-col .fa-arrow-left,
+.caroussels .caroussel .fa-arrow-left,
 .caroussels .caroussel .fa-arrow-right {
     cursor: pointer;
 }
@@ -296,7 +319,7 @@ header .menu span .far {
     display: flex;
     flex-direction: column;
     gap: 25px;
-    width: 300px;
+    width: 25%;
     height: 100%;
 }
 .caroussels .caroussel .left-col a {
@@ -309,26 +332,12 @@ header .menu span .far {
 
 .caroussels .caroussel .right-col {
     height: 100%;
-    width: calc(100% - 300px);
+    width: 75%;
     display: flex;
     overflow-x: scroll;
     position: relative;
 }
-.caroussels .caroussel .right-col .fa-arrow-left {
-    position: absolute;
-    width: 40px;
-    height: 40px;
-    background-color: var(--bgColor);
-    border: 2px solid var(--wrigthColor);
-    border-radius: 50%;
-    left: 0;
-    top: 30%;
-    transform: translate(-50%, -30%);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    z-index: 9999;
-}
+
 .caroussels .caroussel .right-col div:not(:last-child) {
     margin-right: 40px;
 }
@@ -357,7 +366,7 @@ header .menu span .far {
     justify-content: center;
 }
 .caroussels .caroussel .right-col div img {
-    height: calc(205px - 4px);
+    height: 65%;
     object-fit: cover;
 }
 .caroussels .caroussel .right-col div img:hover {
@@ -366,11 +375,24 @@ header .menu span .far {
 }
 
 .caroussels .caroussel .right-col div .description {
-    height: calc(100% - 207px);
+    height: 35%;
     display: flex;
     flex-direction: column;
     gap: 5px;
     width: 100%;
+}
+.caroussels .caroussel .right-col div .rating {
+    display: flex;
+    margin-bottom: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.caroussels .caroussel .right-col div .rating i {
+    color: green;
+    background-color: green;
+    border-radius: 50%;
+    margin: 1px;
 }
 
 /******** FOOTER *********/
@@ -395,4 +417,137 @@ footer a {
 }
 
 @media screen and (max-width: 1420px) {
+    header .menu {
+        width: 30%;
+    }
+    header .menu span {
+        min-width: calc(30% / 4);
+    }
+    header .menu p {
+        display: none;
+    }
+
+    main .all_boxes {
+        flex-wrap: wrap;
+        flex: 1;
+    }
+    main .all_boxes .box {
+        max-width: 150px;
+        min-width: calc(100% / 3 - 10px);
+    }
+}
+@media screen and (max-width: 950px) {
+    header {
+        position: relative;
+    }
+    header .menu {
+        display: none;
+    }
+    header .burger {
+        display: block;
+        position: relative;
+        width: 40px;
+        height: 24px;
+        cursor: pointer;
+    }
+    header .burger span {
+        width: 100%;
+        height: 4px;
+        background-color: var(--wrigthColor);
+        display: block;
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: background-color 0.5s ease-in-out;
+    }
+    header .burger span::before,
+    header .burger span::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 4px;
+        background-color: var(--wrigthColor);
+        transition: transform 0.5s ease-in-out;
+    }
+    header .burger span::before {
+        transform: translateY(-10px);
+    }
+    header .burger span::after {
+        transform: translateY(10px);
+    }
+    header .burger.active span {
+        background-color: transparent;
+    }
+    header .burger.active span::before {
+        transform: translateY(0px) rotateZ(45deg);
+    }
+    header .burger.active span::after {
+        transform: translateY(0px) rotateZ(-45deg);
+    }
+
+    header .header_left input {
+        border: none;
+        display: none;
+    }
+    header .header_left img {
+        position: absolute;
+        left: 50%;
+        width: 90%;
+        transform: translateX(-10%);
+    }
+    header .header_left i {
+        left: 0;
+    }
+    main .all_boxes .box {
+        max-width: 150px;
+        flex-grow: 1;
+        min-width: calc(100% / 2 - 10px);
+    }
+    /******** images *******/
+    main .all_images .right_images {
+        display: none;
+    }
+
+    main .content {
+        flex-direction: column;
+    }
+    main .content .left_content {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+    main .content .left_content h2 {
+        text-align: center;
+    }
+    main .content .right_content {
+        width: 100%;
+        margin-bottom: 40px;
+    }
+
+    /****** carroussels *******/
+    main .caroussels .caroussel {
+        flex-direction: column;
+        height: 85vh;
+    }
+    main .caroussels .caroussel .fas {
+        display: none;
+    }
+    main .caroussels .caroussel .left-col {
+        width: 100%;
+        height: 10%;
+    }
+    main .caroussels .caroussel .right-col {
+        width: 100%;
+        height: 90%;
+    }
+    .caroussels .caroussel .right-col > div {
+        height: 100%;
+        width: 100%;
+    }
+    main .caroussels .caroussel .right-col div img {
+        object-fit: cover;
+        height: 100%;
+    }
+    .caroussels .caroussel .right-col div .description {
+        width: 100%;
+    }
 }
