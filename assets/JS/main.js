@@ -26,10 +26,10 @@ document.addEventListener('DOMContentLoaded', () => {
         e.preventDefault();
 
         const data = {
-            firstname: document.querySelector('#firstname').nodeValue,
-            lastname: document.querySelector('#lastname').nodeValue,
-            email: document.querySelector('#email').nodeValue,
-            description: document.querySelector('#description').nodeValue,
+            firstname: document.querySelector('#firstname').value,
+            lastname: document.querySelector('#lastname').value,
+            email: document.querySelector('#email').value,
+            description: document.querySelector('#description').value,
         };
 
         const response = await axios.post(
