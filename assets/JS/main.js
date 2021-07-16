@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const form = document.querySelector('.fa-user-circle');
-    const closeForm = document.querySelector('#contactForm');
+    const closeForm = document.querySelector('.croix');
     const contactForm = document.querySelector('#contactForm');
 
     //Afficher et cacher le modal
