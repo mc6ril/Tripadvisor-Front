@@ -19,7 +19,6 @@ document.addEventListener('DOMContentLoaded', () => {
     burger.addEventListener('click', () => {
         header.classList.toggle('hidden');
         menu.classList.toggle('visible');
-        console.log('ok');
     });
 
     //Envoie des données du formulaire en backend
@@ -33,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
             description: document.querySelector('#description').nodeValue,
         };
 
-        const response = await axios.post('?', data);
+        const response = await axios.post('https://tripadvisor-cyril.netlify.app/', data);
         console.log(response);
     });
 });
