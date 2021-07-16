@@ -32,7 +32,10 @@ document.addEventListener('DOMContentLoaded', () => {
             description: document.querySelector('#description').nodeValue,
         };
 
-        const response = await axios.post('https://tripadvisor-cyril.netlify.app/', data);
+        const response = await axios.post(
+            'https://tripadvisor-cyril-back.herokuapp.com/form',
+            data,
+        );
         console.log(response);
     });
 });
