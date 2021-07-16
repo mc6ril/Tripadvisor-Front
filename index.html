@@ -20,6 +20,8 @@
             href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap"
             rel="stylesheet"
         />
+        <script src="./assets/JS/main.js"></script>
+        <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
     </head>
     <body>
         <header class="containers">
@@ -286,10 +288,13 @@
             <section class="modal hidden">
                 <div class="form-container">
                     <div>
-                        <i class="icon-times"></i>
                         <p>Formulaire de contact</p>
 
                         <form id="contactForm">
+                            <div class="croix">
+                                <span></span>
+                                <span></span>
+                            </div>
                             <input
                                 type="text"
                                 name="firstname"
