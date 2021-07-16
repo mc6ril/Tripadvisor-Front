@@ -23,6 +23,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     //Envoie des données du formulaire en backend
     contactForm.addEventListener('submit', async (e) => {
+        const p = document.createElement('p');
+
         e.preventDefault();
 
         const data = {
@@ -36,7 +38,16 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://tripadvisor-cyril-back.herokuapp.com/form',
             data,
         );
-        console.log(response.data);
-        contactForm.reset();
+        if (response.status === 300) {
+            contactForm.append(p);
+            p.innerText = 'Mail envoyé';
+            p.style.color = 'green';
+            contactForm.reset();
+        } else {
+            contactForm.append(p);
+            p.innerText = 'Mail non envoyé';
+            p.style.color = 'red';
+            contactForm.reset();
+        }
     });
 });
