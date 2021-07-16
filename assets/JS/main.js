@@ -38,7 +38,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://tripadvisor-cyril-back.herokuapp.com/form',
             data,
         );
-        if (response.status === 300) {
+        if (response.status === 200) {
             contactForm.append(p);
             p.innerText = 'Mail envoyé';
             p.style.color = 'green';
