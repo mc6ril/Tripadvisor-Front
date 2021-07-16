@@ -25,6 +25,13 @@
     header .menu {
         display: none;
     }
+    header .visible {
+        display: flex;
+        width: 100%;
+    }
+    header .header_left.hidden {
+        display: none;
+    }
     header .burger {
         display: block;
         position: relative;

@@ -2,7 +2,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const modal = document.querySelector('.modal');
     const form = document.querySelector('.fa-user-circle');
     const closeForm = document.querySelector('.croix');
+    const burger = document.querySelector('.burger');
     const contactForm = document.querySelector('#contactForm');
+    const menu = document.querySelector('.menu');
+    const header = document.querySelector('.header_left');
 
     //Afficher et cacher le modal
     form.addEventListener('click', () => {
@@ -11,6 +14,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     closeForm.addEventListener('click', () => {
         modal.classList.toggle('hidden');
+    });
+
+    burger.addEventListener('click', () => {
+        header.classList.toggle('hidden');
+        menu.classList.toggle('visible');
+        console.log('ok');
     });
 
     //Envoie des données du formulaire en backend
