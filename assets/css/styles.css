@@ -497,6 +497,12 @@ input[type='submit']:hover {
 input[type='submit']:focus {
     outline: var(--elementColor) solid 2px;
 }
+.sent-message {
+    display: none;
+}
+.sent-message.visible {
+    display: block;
+}
 
 /******** FOOTER *********/
 footer {
