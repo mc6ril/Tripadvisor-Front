@@ -36,6 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
             'https://tripadvisor-cyril-back.herokuapp.com/form',
             data,
         );
-        console.log(response);
+        console.log(response.data);
+        contactForm.reset();
     });
 });
